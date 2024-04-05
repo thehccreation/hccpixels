@@ -1,0 +1,331 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+}
+
+.loaderbg{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.856);
+    backdrop-filter: blur(5px);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+ }
+ .loaderbdr{
+     position: relative;
+     width:60%;
+     border: 2px solid white;
+ }
+ .loader{
+     background-color: white;
+     height:30px;
+     position: relative;
+     animation: loaderanimate 3s ease;
+ }
+ @keyframes loaderanimate {
+     0%{width: 0%;}
+     25%{width: 20%;}
+     50%{width: 50%;}
+     75%{width: 80%;}
+     100%{width: 100%;}
+ }
+ .loaderbg p{
+     color: white;
+     margin-top: 50px;
+     font-size: 18px;
+ }
+ .loaderbg h3{
+     color: white;
+     position: absolute;
+     bottom: 60px;
+ }
+ .loaderbg h3 span{
+     font-weight: 100;
+     font-size: 18px;
+ }
+
+header{
+    width: 100%;
+    height: 80vh;
+    padding: 20px 10px;
+    background: white;
+    background-image: url(https://source.unsplash.com/random/900x900/?abstract);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.637);
+    border-radius: 50px;
+}
+
+header nav img{
+    width: 60px;
+    height: 60px;
+}
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+header nav ul li{
+    margin: 10px;
+    transition: 0.2s;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: bolder;
+    color: black;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+header nav ul li a:hover{
+    background-color: black;
+    color: white;
+}
+
+header h1{
+    width: fit-content;
+    margin: 100px auto 50px;
+    color: white;
+    font-size: 100px;
+    mix-blend-mode: difference;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    border: 5px solid black;
+}
+
+form{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto 60px;
+    border-radius: 40px;
+    padding: 10px;
+}
+.searcharea{
+    width: 60%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 8px 10px;
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.295));
+}
+#search-input{
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    border: 0;
+    outline: 0;
+    background: black;
+    color: white;
+    font-size: 18px;
+}
+#search-button{
+    height: 50px;
+    width: 90px;
+    outline: 0;
+    bottom: 0;
+    margin-left: 10px;
+    color: white;
+    background: transparent;
+    font-size: 15px;
+    transition: 0.2s;
+    outline: 0;
+    border: 0;
+}
+#search-button:hover{
+    font-weight: bold;
+}
+
+.searchResults{
+    position: relative;
+    top: -50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 40px;
+    gap: 10px;
+}
+.searchResult{
+    background: white;
+    margin-bottom: 60px;
+    width: 30%;
+    min-width: 300px;
+    min-height: 300px;
+    height: 100%;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.322);
+    transition: 0.3s;
+
+}
+.searchResult:hover{
+    scale: 1.02;
+
+}
+.searchResult img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;  
+}
+
+.searchResult a{
+    padding: 8px 12px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    min-height: 40px;
+    max-height: 150px;
+    width: 98%;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+.searchResult a::after{
+    
+    content: url(https://img.icons8.com/material-rounded/24/download--v1.png);
+    height: fit-content;
+    width: fit-content;
+}
+.searchResult a:hover{
+    text-decoration: underline;
+}
+
+#show-more-button{
+    padding: 10px 15px;
+    background:white;
+    color: black;
+    transition: 0.2s;
+    border-radius: 10px;
+    margin: 50px auto;
+    display: none;
+    cursor: pointer;
+    font-size: 18px;
+    outline: 0;
+    border: 0;
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.411));
+}
+#show-more-button:hover{
+    color: black;
+    background-color: rgb(238, 238, 238);
+}
+
+
+footer{
+    width: 100%;
+    padding: 10px;
+}
+footer ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 20px ;
+    border-bottom: 2px solid gray;
+    border-top: 2px solid gray;
+}
+
+footer ul li {
+    margin: 20px 50px;
+}
+footer ul li a{
+    text-decoration:none;
+    color: white;
+    /* background-color: red; */
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+footer ul li a:hover{
+    background-color: white;
+    color: black;
+}
+footer p{
+    margin: 20px auto;
+    width: fit-content;
+    color: white;
+    text-align: center;
+}
+footer p a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 10px;
+    font-size:15px ;
+}
+footer p a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+@media only screen and (max-width: 900px) and (min-width: 600px) 
+{
+    .searcharea{
+      width: 70%;
+    }
+    header h1{
+        font-size: 75px;
+    } 
+    .searchResults{
+        top: -200px;
+    }
+    .loaderbg h3{
+        bottom: 100px;
+    }
+    .loaderbdr{
+        width: 70%;
+    }
+  }
+
+
+@media only screen and (max-width: 600px) {
+    .searcharea{
+      width: 80%;
+    }
+    header h1{
+        font-size: 50px;
+    } 
+    .searchResults{
+        top: -200px;
+    }
+    .loaderbg h3{
+        bottom: 100px;
+    }
+    .loaderbdr{
+        width: 80%;
+    }
+  }
+
