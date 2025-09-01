@@ -1,4 +1,4 @@
- 
+console.log("HCC Pixels 3.0, Developed by THEHCCREATION"); 
 
 const accessKey = "ci3LRmju9yDNSHOnyyI-FQTflPOYAhoPw8JdnylKYeY";
 
@@ -102,4 +102,5 @@ formEl.addEventListener("submit", (event) => {
 showMore.addEventListener("click", () => {
     searchImages();
 });
+
 
