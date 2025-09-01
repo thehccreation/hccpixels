@@ -1,88 +1,72 @@
+/* HCC Pixels 3.0, Developed by THEHCCREATION */
+
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
 }
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;   
+}
 html{
     scroll-behavior: smooth;
 }
 body{
     background-color: black;
+    background-image: url(https://ik.imagekit.io/tovuwazhze/service%20img/img1.jpg?updatedAt=1756721192555);;
 }
 
-.loaderbg{
-    top: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.856);
-    backdrop-filter: blur(5px);
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
- }
- .loaderbdr{
-     position: relative;
-     width:60%;
-     border: 2px solid white;
- }
- .loader{
-     background-color: white;
-     height:30px;
-     position: relative;
-     animation: loaderanimate 3s ease;
- }
- @keyframes loaderanimate {
-     0%{width: 0%;}
-     25%{width: 20%;}
-     50%{width: 50%;}
-     75%{width: 80%;}
-     100%{width: 100%;}
- }
- .loaderbg p{
-     color: white;
-     margin-top: 50px;
-     font-size: 18px;
- }
- .loaderbg h3{
-     color: white;
-     position: absolute;
-     bottom: 60px;
- }
- .loaderbg h3 span{
-     font-weight: 100;
-     font-size: 18px;
- }
+
+.searchResult.fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.searchResult.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 header{
     width: 100%;
-    height: 550px;
-    padding: 20px 10px;
-    background: white;
-    background-image: url(https://images.unsplash.com/flagged/photo-1567400358593-9e6382752ea2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    background-size: cover;
-    background-position:center;
-    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 10px;
+    background: rgba(213, 213, 213, 0.277);
+    /* background-size:cover; */
+    background-position:top;
+    backdrop-filter: blur(5px);
+    /* background-repeat: no-repeat; */
 }
 nav{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 20px;
+    padding: 2px 5px 2px 20px;
     backdrop-filter: blur(3px);
-    background-color: rgba(255, 255, 255, 0.637);
+    /* background-color: rgb(78, 48, 48); */
     border-radius: 50px;
+    filter: drop-shadow(0px 0px 5px rgb(222, 222, 222));
+    border: 2px solid rgb(204, 204, 204);
 }
 
 header nav img{
     width: 60px;
     height: 60px;
+    filter: grayscale(1);
+    transition: 0.3s;
+}
+header nav img:hover{
+    filter: grayscale(0);
 }
 header nav ul {
     display: flex;
@@ -95,27 +79,29 @@ header nav ul li{
 
 header nav ul li a{
     text-decoration: none;
-    padding: 8px 12px;
-    font-size: 15px;
+    padding: 12px 18px;
+    font-size: 18px;
     font-weight: bolder;
-    color: black;
-    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    border-radius: 30px;
     transition: 0.3s;
+    background-color: rgb(54, 54, 54);
 }
 header nav ul li a:hover{
-    background-color: black;
-    color: white;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 header h1{
     width: fit-content;
-    margin: 100px auto 50px;
-    color: white;
+    margin: 80px auto 0px;
+    color: black;
     font-size: 100px;
-    mix-blend-mode: difference;
-    font-family: "Protest Guerrilla", sans-serif;
+    /* mix-blend-mode: difference; */
+    font-family: "Plaster", serif;
     font-weight: 400;
-    border: 5px solid black;
+    text-align: center;
+    filter: drop-shadow(0px 0px 2px white);
 }
 
 form{
@@ -128,6 +114,7 @@ form{
 }
 .searcharea{
     width: 60%;
+    max-width: 900px;
     background-color: black;
     display: flex;
     align-items: center;
@@ -135,33 +122,43 @@ form{
     border-radius: 50px;
     overflow: hidden;
     padding: 8px 10px;
-    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.295));
+    /* filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.295)); */
+    filter: drop-shadow(0px 0px 2px white);
 }
+
 #search-input{
     width: 100%;
     height: 50px;
     padding-left: 20px;
+    padding-bottom: 2px;
     border: 0;
     outline: 0;
     background: black;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: "Outfit", sans-serif;
 }
+
 #search-button{
-    height: 50px;
-    width: 90px;
+    /* height: 50px; */
+    /* width: 90px; */
     outline: 0;
     bottom: 0;
-    margin-left: 10px;
-    color: white;
-    background: transparent;
+    margin: 2px 8px 2px 12px;
+    padding: 12px ;
+    color: black;
+    background: white;
     font-size: 15px;
     transition: 0.2s;
+    /* font-weight: bold; */
+    font-family:sans-serif;
+    font-weight: 700;
     outline: 0;
     border: 0;
+    border-radius: 50px;
 }
 #search-button:hover{
-    font-weight: bold;
+    scale: 1.1;
 }
 
 .searchResults{
@@ -180,13 +177,13 @@ form{
     margin-bottom: 60px;
     width: 30%;
     min-width: 300px;
-    min-height: 300px;
-    height: 100%;
+    /* min-height: 300px; */
+    height: 450px;
     margin: 10px;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.322);
-    transition: 0.3s;
+    transition: 0.8s;
 
 }
 .searchResult:hover{
@@ -195,7 +192,7 @@ form{
 }
 .searchResult img{
     width: 100%;
-    height: 400px;
+    height: 450px;
     object-fit: cover;  
 }
 
@@ -211,66 +208,64 @@ form{
     display: flex;
     justify-content: space-between;
 }
-.searchResult a::after{
-    
-    content: url(https://img.icons8.com/material-rounded/24/download--v1.png);
-    height: fit-content;
-    width: fit-content;
+.searchResult:hover .fncbtns{
+    opacity: 1;
 }
-.searchResult a:hover{
-    text-decoration: underline;
+.fncbtns{
+    opacity: 0;
+    display: flex;
+    /* background-color: red; */
+    width: 100%;
+    position: relative;
+    bottom: 60px;
+    justify-content: flex-end;
+    padding-right:15px ;
+    transition: 0.3s;
+}
+.fncbtn{
+    background-color: rgba(0, 0, 0, 0.603);
+    width: fit-content;
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    margin: 0 4px;
+    padding: 4px 6px;
+    border: 0;
+    /* border: 2px solid rgb(31, 31, 31); */
+
+}
+.fncbtn:hover{
+    scale: 1.1;
+}
+.fncimg{
+    width: 30px !important;
+    height: 30px !important;
+    filter: invert(1);
 }
 
 #show-more-button{
     padding: 10px 15px;
-    background:white;
-    color: black;
+    background:rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     transition: 0.2s;
     border-radius: 10px;
-    margin: 50px auto;
+    margin: 5px auto 50px;
     display: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 24px;
     outline: 0;
     border: 0;
     filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.411));
 }
 #show-more-button:hover{
-    color: black;
-    background-color: rgb(238, 238, 238);
+    scale: 1.1;
 }
 
 
 footer{
     width: 100%;
+    /* height: 58px; */
     padding: 10px;
-}
-footer ul{
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    padding: 20px ;
-    border-bottom: 2px solid gray;
-    border-top: 2px solid gray;
-}
-
-footer ul li {
-    margin: 20px 50px;
-}
-footer ul li a{
-    text-decoration:none;
-    color: white;
-    /* background-color: red; */
-    border-radius: 20px;
-    font-size: 20px;
-    padding: 8px 12px;
-    transition: 0.3s;
-}
-footer ul li a:hover{
-    background-color: white;
-    color: black;
+    background: #000;
 }
 footer p{
     margin: 20px auto;
@@ -278,15 +273,17 @@ footer p{
     color: white;
     text-align: center;
 }
+footer span{
+    margin: 0 5px;
+}
 footer p a {
     color: white;
     text-decoration: none;
     margin: 0px 10px;
     font-size:15px ;
+    font-weight: bolder;
 }
-footer p a:hover{
-    text-decoration: underline;
-}
+
 
 
 
@@ -294,8 +291,9 @@ footer p a:hover{
 @media only screen and (max-width: 900px) and (min-width: 600px) 
 {
     .searcharea{
-      width: 70%;
-    }
+    min-width: 300px;
+    width: 98%;
+}
     header h1{
         font-size: 75px;
     } 
@@ -308,12 +306,15 @@ footer p a:hover{
     .loaderbdr{
         width: 70%;
     }
+    .fncbtns{
+        opacity: 1;
+    }
   }
 
 
 @media only screen and (max-width: 600px) {
     .searcharea{
-      width: 80%;
+        width: 80%;
     }
     header h1{
         font-size: 50px;
@@ -327,5 +328,7 @@ footer p a:hover{
     .loaderbdr{
         width: 80%;
     }
+    .fncbtns{
+        opacity: 1;
+    }
   }
-
